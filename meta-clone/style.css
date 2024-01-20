@@ -1,0 +1,605 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+body {
+  height: 1300px;
+  background-color: #dcdcdc;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 100;
+  height: 55px;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.left-section {
+  display: flex;
+  flex: 0.35;
+  flex-direction: row;
+  align-items: center;
+  /* border: 2px solid yellow; */
+}
+
+.middle-section {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  /* border: 2px solid orange; */
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: row;
+  flex: 0.25;
+  /* border: 2px solid pink; */
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.facebook-logo {
+  flex: 0.1;
+  max-width: 43px;
+  margin-left: 10px;
+}
+
+.search-bar {
+  width: 100%;
+  flex: 0.85;
+  border-radius: 18px;
+  color: gray;
+  border: 1px solid #dcdcdc;
+  background-color: #f0f2f5;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+}
+
+input {
+  font-size: 15px;
+}
+
+.home-button {
+  background-color: white;
+  border: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-button,
+.message-notification-button,
+.notification-button,
+.account-button {
+  border: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-button .tooltip,
+.message-notification-button .tooltip,
+.notification-button .tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.643);
+  color: white;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  bottom: -53px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.create-button .tooltip,
+.account-button .tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.643);
+  color: white;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  bottom: -45px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.message-notification-button .tooltip,
+.notification-button .tooltip {
+  bottom: -45px;
+}
+
+.home-button:hover .tooltip,
+.create-button:hover .tooltip,
+.message-notification-button:hover .tooltip,
+.notification-button:hover .tooltip,
+.account-button:hover .tooltip {
+  opacity: 1;
+}
+
+.home-button:hover,
+.create-post-button:hover,
+.message-notification-button:hover,
+.notification-button:hover,
+.account-button:hover {
+  cursor: pointer;
+}
+
+.create-post-button,
+.notification-button,
+.message-notification-button {
+  border-radius: 20px;
+  border: none;
+  height: 40px;
+  width: 40px;
+  font-size: 25px;
+}
+
+.notification-button,
+.message-notification-button {
+  position: relative;
+}
+
+.notification-count {
+  position: absolute;
+  top: -8px;
+  right: -20px;
+  background-color: rgb(200, 0, 0);
+  color: white;
+  font-family: Roboto, Arial;
+  font-size: 13px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 50px;
+}
+
+.message-notification-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: rgb(200, 0, 0);
+  color: white;
+  font-family: Roboto, Arial;
+  font-size: 13px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 50px;
+}
+
+.facebook-messenger-icon,
+.facebook-notification-icon {
+  width: 20px;
+}
+
+.facebook-account-icon {
+  object-fit: contain;
+  width: 40px;
+  border-radius: 20px;
+}
+
+.facebook-home {
+  height: 25px;
+}
+
+.facebook-video {
+  height: 25px;
+}
+
+.facebook-marketplace {
+  height: 25px;
+}
+
+.facebook-groups {
+  height: 25px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 72px;
+}
+
+.left-side-bar1,
+.left-side-bar2,
+.left-side-bar3,
+.left-side-bar4,
+.left-side-bar5,
+.left-side-bar6,
+.left-side-bar7,
+.left-side-bar8,
+.left-side-bar9,
+.left-side-bar10 {
+  display: flex;
+  margin-left: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 100%;
+  align-items: center;
+}
+
+.left-side-bar1 p,
+.left-side-bar2 p,
+.left-side-bar3 p,
+.left-side-bar4 p,
+.left-side-bar5 p,
+.left-side-bar6 p,
+.left-side-bar7 p,
+.left-side-bar8 p,
+.left-side-bar9 p,
+.left-side-bar10 p {
+  padding-left: 12px;
+  font: Roboto;
+}
+
+.left-side-bar1:hover,
+.left-side-bar2:hover,
+.left-side-bar3:hover,
+.left-side-bar4:hover,
+.left-side-bar5:hover,
+.left-side-bar6:hover,
+.left-side-bar7:hover,
+.left-side-bar8:hover,
+.left-side-bar9:hover,
+.left-side-bar10:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  width: 300px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-side-bar {
+  flex: 0.4;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.middle-section-body {
+  display: flex;
+  flex-direction: column;
+  flex: 0.8;
+}
+
+.right-side-bar {
+  display: flex;
+  flex-direction: column;
+  flex: 0.3;
+  margin-left: 15px;
+}
+
+.story-board {
+  display: flex;
+  flex-direction: row;
+}
+
+.create-story {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  margin-right: 7px;
+  box-shadow: inset 1px 2px 5px rgba(234, 228, 228, 0.3);
+  border-radius: 12px;
+  transition: opacity 0.15s, width 0.9s, height 0.9s;
+}
+
+.create-story #create-story {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  font-weight: 520;
+}
+
+.create-story p {
+  padding-top: 33px;
+  padding-bottom: 20px;
+  font-weight: 520;
+}
+
+.create-story:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.create-story:active {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.create-story:hover .profile-pic {
+  width: 150px;
+  height: 210px;
+}
+
+.profile-pic {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  width: 140px;
+  height: 200px;
+}
+
+.create-story-button {
+  text-align: center;
+  border-radius: 20px;
+  border: 3px solid white;
+  padding-bottom: 35px;
+  width: 40px;
+  height: 35px;
+  font-size: 30px;
+  color: white;
+  margin-top: -12px;
+  background-color: rgb(34, 97, 221);
+  font-weight: 100;
+}
+
+.post-upload {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 8px;
+}
+
+.story-upload {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-upload {
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  margin-left: 7px;
+  padding-left: 12px;
+  background-color: #dcdcdc;
+}
+
+.status-upload,
+.live-video-upload,
+.photo-video-upload,
+.feeling-activity-upload {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  transition: background-color 0.15s;
+}
+
+.live-video-upload,
+.photo-video-upload,
+.feeling-activity-upload {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+}
+
+.status-upload p {
+  padding: 0 7px;
+}
+
+.live-video-upload:hover,
+.photo-video-upload:hover,
+.feeling-activity-upload:hover {
+  cursor: pointer;
+  background-color: #dcdcdc;
+  border-radius: 5px;
+}
+
+.status-upload img {
+  width: 25px;
+}
+
+.pages-and-profiles {
+  display: flex;
+  flex-direction: column;
+  line-height: 40px;
+}
+.pages-and-profile--profile,
+.pages-and-profile--page-switch,
+.pages-and-profile--promotion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pages-and-profile--profile p {
+  padding-left: 10px;
+}
+
+.pages-and-profile--page-switch p,
+.pages-and-profile--promotion p {
+  padding-left: 24px;
+}
+
+#pages-and-profile--profile-pic {
+  width: 35px;
+  border-radius: 20px;
+}
+
+.pages-and-profiles img {
+  width: 20px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  line-height: 50px;
+}
+
+.contact-friends {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contact-friends p {
+  margin-left: 10px;
+}
+
+.sponsor-codecademy {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  padding-top: 10px;
+  border-radius: 8px;
+  background-color: white;
+  position: relative;
+}
+
+.sponsor-codecademy--link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.sponsor-codecademy--banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sponsor-codecademy--banner-img {
+  width: 500px;
+}
+
+#codecademy-sponsor {
+  font-size: 12px;
+  color: #787474;
+}
+
+.sponsor-codecademy--description {
+  line-height: 30px;
+  margin-left: 15px;
+}
+
+.codecademy-profile {
+  width: 40px;
+  border-radius: 20px;
+  margin-right: 8px;
+  margin-left: 15px;
+}
+
+.sponsor-codecademy--header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sponsor-codecademy--footer {
+  background-color: #dcdcdc;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-left: 15px;
+}
+
+.sponsor-codecademy--button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 13px;
+  border-radius: 8px;
+  border: none;
+  background-color: #d0cdcd;
+  font-weight: 800;
+}
+
+.sponsor-codecademy--button:hover {
+  background-color: #a19e9e;
+  cursor: pointer;
+}
+
+.sponsor-codecademy--button:active {
+  background-color: #787474;
+}
+
+.like-icon {
+  display: flex;
+  padding: 5px;
+}
+
+.user-input-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
+}
+
+.user-input-section div {
+  display: flex;
+  flex-direction: row;
+  padding: 7px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+}
+
+.user-input-section div:hover {
+  background-color: #d9d4d4;
+  cursor: pointer;
+}
+
+.user-input-section div:active {
+  opacity: 0.6;
+}
+
+.like-button {
+  width: 18px;
+  padding-right: 5px;
+}
+
+.like {
+  width: 20px;
+  background-color: white;
+}
+
+.more-button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
